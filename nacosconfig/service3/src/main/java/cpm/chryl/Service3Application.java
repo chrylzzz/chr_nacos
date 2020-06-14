@@ -1,4 +1,4 @@
-package chryl;
+package cpm.chryl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -17,9 +17,10 @@ import java.util.Map;
  */
 @SpringBootApplication
 @RestController
-public class Service2Application {
+public class Service3Application {
+
     public static void main(String[] args) {
-        SpringApplication.run(Service2Application.class, args);
+        SpringApplication.run(Service3Application.class, args);
     }
 
     @Autowired

@@ -1,0 +1,19 @@
+server:
+  port: 56030
+spring:
+  application:
+    name: service2 # 注意这个名字必须是dataId的名字.不包含扩展名,才能被发现
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848 #配置中心地址
+        # 没有配置 当前的配置文件,为什么能找到该配置文件
+        file-extension: yaml #配置文件扩展名,原理: 本来扩展名为dataId 也就是在现在的配置文件的spring.application.name加上file-extension的名字
+        namespace: cf4991df-158c-4cc1-bf7b-a7dd32c3ea04 #
+        group: TEST_GROUP #
+        #config external configuration:
+        # 共享data id 的方式:加载多个配置文件,只认识 DEFAULT_GROUP 组下的配置信息,其他组不能加载,不建议使用
+        shared-dataids: ext-config-common01.properties,ext-config-common02.properties,ext-config-common03.properties
+        # 刷新哪个配置文件
+        refreshable-dataids: ext-config-common03.properties

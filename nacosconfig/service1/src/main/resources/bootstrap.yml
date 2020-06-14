@@ -11,4 +11,4 @@ spring:
         # 没有配置 当前的配置文件,为什么能找到该配置文件 , 自动拼装
         file-extension: yaml #配置文件扩展名,原理: 本来扩展名为dataId 也就是在现在的配置文件的spring.application.name加上file-extension的名字
         namespace: cf4991df-158c-4cc1-bf7b-a7dd32c3ea04 #
-        group: 	TEST_GROUP #
+        group: TEST_GROUP #

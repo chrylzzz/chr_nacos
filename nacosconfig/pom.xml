@@ -2,17 +2,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--<parent>-->
+        <!--<artifactId>chr_nacos</artifactId>-->
+        <!--<groupId>com.chryl</groupId>-->
+        <!--<version>0.0.1-SNAPSHOT</version>-->
+    <!--</parent>-->
+
     <parent>
-        <artifactId>chr_nacos</artifactId>
-        <groupId>com.chryl</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>nacos-config</artifactId>
+    <!--<artifactId>nacos-config</artifactId>-->
     <packaging>pom</packaging>
+    <artifactId>nacos-config</artifactId>
+    <groupId>com.chryl</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <!-- 两个子模块 -->
     <modules>
         <module>service1</module>
+        <module>service2</module>
+        <module>service3</module>
     </modules>
 
     <properties>
