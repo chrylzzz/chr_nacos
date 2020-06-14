@@ -1,0 +1,14 @@
+server:
+  port: 56010
+spring:
+  application:
+    name: service1 # 注意这个名字必须是dataId的名字.不包含扩展名,才能被发现
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848,127.0.0.1:8849,127.0.0.1:8850   #配置集群中心地址
+        # 没有配置 当前的配置文件,为什么能找到该配置文件 , 自动拼装
+        file-extension: yaml #配置文件扩展名,原理: 本来扩展名为dataId 也就是在现在的配置文件的spring.application.name加上file-extension的名字
+        namespace: cf4991df-158c-4cc1-bf7b-a7dd32c3ea04 #
+        group: TEST_GROUP #

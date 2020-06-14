@@ -1,13 +1,12 @@
 package com.chryl;
 
-import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ChrNacosApplicationTests {
+class NacosClusterApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
