@@ -1,5 +1,5 @@
 server:
-  port: 56010
+  port: 56050
 spring:
   application:
     name: service1 # 注意这个名字必须是dataId的名字.不包含扩展名,才能被发现
@@ -12,3 +12,16 @@ spring:
         file-extension: yaml #配置文件扩展名,原理: 本来扩展名为dataId 也就是在现在的配置文件的spring.application.name加上file-extension的名字
         namespace: cf4991df-158c-4cc1-bf7b-a7dd32c3ea04 #
         group: TEST_GROUP #
+        #config external configuration: 注意,如果配置的信息的key重复,会以前面的优先级覆盖第二优先级
+        #1.data Id 在默认的组default_group(没有指定group,默认就是默认组),不支持配置的动态刷新
+        ext-config[0]:
+          data-id: ext-config-common01.properties
+        #2.data id 不在默认的组,不支持动态刷新(没加refresh)
+        ext-config[1]:
+          data-id: ext-config-common02.properties
+          group: GLOBALE_GROUP
+#        #3.data id 既不再默认的组,也支持动态刷新
+        ext-config[2]:
+          data-id: ext-config-common03.properties
+          group: REFRESH_GROUP
+          refresh: true #开启动态刷新
