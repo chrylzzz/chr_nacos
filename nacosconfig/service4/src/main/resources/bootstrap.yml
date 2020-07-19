@@ -1,0 +1,15 @@
+server:
+  port: 56040
+spring:
+  application:
+    name: service4 # 注意这个名字必须是dataId的名字.不包含扩展名,才能被发现 , 此处加载 service4.yaml
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848 #配置中心地址
+        file-extension: yaml #配置文件扩展名,原理: 本来扩展名为dataId 也就是在现在的配置文件的spring.application.name加上file-extension的名字
+        namespace: cf4991df-158c-4cc1-bf7b-a7dd32c3ea04 #
+        group: TEST_GROUP #
+  profiles:
+    active: dev # nacos 支持 profile(dev,test,prod) , 该出代表 加载 service4-dev.yaml

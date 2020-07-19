@@ -1,8 +1,10 @@
 package cpm.chryl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +19,7 @@ import java.util.Map;
  */
 @SpringBootApplication
 @RestController
+@RefreshScope
 public class Service3Application {
 
     public static void main(String[] args) {
@@ -25,6 +28,9 @@ public class Service3Application {
 
     @Autowired
     ConfigurableApplicationContext applicationContext;
+
+//    @Value("${allconfig.show}")
+//    String show;
 
     @GetMapping("configs")
     public Object getConfigw() {
@@ -42,4 +48,9 @@ public class Service3Application {
 
         return resMap;
     }
+
+//    @GetMapping("/showZ")
+//    public String showZ() {
+//        return show;
+// }
 }

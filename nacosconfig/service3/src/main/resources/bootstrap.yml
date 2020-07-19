@@ -13,7 +13,7 @@ spring:
         namespace: cf4991df-158c-4cc1-bf7b-a7dd32c3ea04 #
         group: TEST_GROUP #
         #config external configuration:
-        # 共享data id 的方式:加载多个配置文件,只认识 DEFAULT_GROUP 组下的配置信息,其他组不能加载,不建议使用
-        shared-dataids: ext-config-common01.properties,ext-config-common02.properties,ext-config-common03.properties
-        # 刷新哪个配置文件
-        refreshable-dataids: ext-config-common03.properties
+        # 共享data id 的方式:加载多个配置文件,只认识 DEFAULT_GROUP 组下的配置信息,其他组不能加载,不建议使用 ,# 该配置项可以引入外部的公共的配置,随意引入配置项,当做公共配置项
+        shared-dataids: ext-config-common01.properties,ext-config-common02.properties,ext-config-common03.properties #,all-service.yaml
+        # 刷新哪个配置文件 , 支持动态刷新的配置文件
+        refreshable-dataids: ext-config-common03.properties #,all-service.yaml
